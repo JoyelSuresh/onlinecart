@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<head>
+    <style>
+            body {text-align: center;}
+            table, th, td {
+              border: 1px solid black;}
+            
+    </style>
+    <body>
+         <h3>PAYMENT SLIP</h3>
+         <h5> User:{{login_name}} </h5>
+            <table align = "center">
+                <tr>
+                    <th>ITEM</th>
+                    <th>PRICE</th>
+                    <th>QUANTITY</th>
+                    <th>TOTAL</th>
+                </tr>
+        
+                {% for key in total %}
+                    <tr>
+                        <th> {{ key }} </th>
+                        <th> {{ shop[key] }} </th>
+                        <th> {{ quantity[key] }} </th>
+                        <th> {{ total[key] }} </th>
+                    </tr>
+                {% endfor %}
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th>GRAND TOTAL</th>
+                    <th> {{grand_total}}</th>
+                </tr>
+
+            </table>
+            <form  action = "/logout">
+                <p> <input type="submit" value="logout" /> </p>
+            </form>
+
+    
+
+    </body>
+
+</head>

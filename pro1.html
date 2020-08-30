@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <body>
+    <style>
+        body {text-align: center;}
+        table, th, td {
+          border: 1px solid black;}
+        
+    </style>
+            <form action = "#" method="POST" >
+                <table align = "center" >
+    
+    
+        <h1> SHOPPING LIST </h1>
+        <h3> User:{{login_name}} </h3>
+        <tr>
+            <th> ITEMS</th>
+            <th>PRICE</th>
+            <th>QUANTITY</th>
+        </tr>
+        {%  for key, value in shop.items() %}
+            <tr>
+               <td>{{key}}</td>
+               <td> {{shop[key]}}</td>
+               <td><input type = "number" min="0" name="{{key}}" ></td>
+               </tr>
+
+        {% endfor %}
+               </table>
+               <input type = "submit">
+            </form>
+    </body>
+
+      
+</html>
